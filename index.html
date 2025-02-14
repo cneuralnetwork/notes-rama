@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes-rama</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+</head>
+<body>
+    <main class="notes-container">
+        <div class="header-container">
+            <div class="notes-header">
+                <h1>notes <span style="color:#7077A1">rama</span></h1>
+            </div>
+            <div class="header-controls">
+                <button id="theme-btn" class="icon-btn" title="Toggle theme">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+                <button id="info-btn" class="icon-btn" title="Help">
+                    <span class="material-icons">info</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="tooltip-content">
+            <div class="tooltip-item">
+                <span class="material-icons">add</span>
+                <span><strong>New Note:</strong> Create a new note</span>
+            </div>
+            <div class="tooltip-item">
+                <span class="material-icons">search</span>
+                <span><strong>Search:</strong> Search up a past note</span>
+            </div>
+            <div class="tooltip-item">
+                <span class="material-icons">sort</span>
+                <span><strong>Sort:</strong> Arrange notes by date</span>
+            </div>
+            <div class="tooltip-item">
+                <span class="material-icons">dark_mode</span>
+                <span><strong>Theme:</strong> Toggle light/dark mode</span>
+            </div>
+        </div>
+
+        <div class="notes-header">
+            <h1>my notes</h1>
+            <button id="new-note" class="primary-btn">New Note</button>
+        </div>
+        
+        <div class="notes-tools">
+            <div class="search-bar">
+                <input type="text" id="search-notes" placeholder="Search notes...">
+            </div>
+            <div class="filter-options">
+                <select id="sort-notes">
+                    <option value="recent">Most Recent</option>
+                    <option value="oldest">Oldest First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="note-editor hidden">
+            <input type="text" id="note-title" placeholder="Note Title">
+            <textarea id="note-content" placeholder="Start typing..."></textarea>
+            <div class="note-tags">
+                <input type="text" id="note-tags" placeholder="Add tags (comma separated)">
+            </div>
+            <div class="editor-actions">
+                <button id="save-note" class="primary-btn">Save</button>
+                <button id="cancel-note" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+
+        <div id="notes-grid" class="notes-grid"></div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
